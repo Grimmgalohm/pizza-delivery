@@ -34,7 +34,7 @@ cmd
   });
 
   cmd
-  .command('list <size>')
+  .command('list')
   .option('-dte, --date')
   .action(function(flavour, size, created){
     Pizza.find().then(pizzas => {
