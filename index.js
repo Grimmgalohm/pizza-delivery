@@ -33,6 +33,7 @@ cmd
     });
   });
 
+
   cmd
   .command('list')
   .option('-dte, --date')
@@ -50,5 +51,26 @@ cmd
       mongoose.disconnect();
     });
   });
+
+
+/*
+cmd
+  .command('list <size>')
+  .option('-dte, --date')
+  .action(function(flavour, size, created){
+    Pizza.find({},$or,{size:'mediana'}).then(pizzas => {
+      for(var i=0; i <= pizzas.length-1; i++){
+        var item = pizzas[i];
+        console.log('Sabor: '.yellow.bold + `${item.flavour}`.green);
+        console.log('Tamaño: '.yellow.bold + `${item.size}`.green);
+        if(item.cash === true){console.log('Pago: '.yellow.bold + `EFECTIVO`.green);}
+        if(item.delivery === true){console.log('Entrega: '.yellow.bold + `DOMICILIO`.green);}
+        console.log('Fecha: '.yellow.bold + `${item.created}`.blue);
+        console.log('\r\n');
+      }
+      mongoose.disconnect();
+    });
+  });
+  */
 
 cmd.parse(process.argv);
